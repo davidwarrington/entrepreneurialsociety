@@ -9,8 +9,8 @@ const config = {
     npm_dir: './node_modules'
 }
 
-gulp.task('clean', cb => {
-    return del(['./dist'], cb);
+gulp.task('clean', (cb) => {
+    return del(['./dist/'], cb);
 });
 
 /**
@@ -54,7 +54,7 @@ gulp.task('scripts', () => {
                     './src/assets/js/*.js'
                 ])
                 .pipe(concat('scripts.js'))
-                .pipe(gulp.dest('./dist/assets/js'))
+                .pipe(gulp.dest('./dist/assets/js/'))
                 .pipe(browser_sync.stream())
 });
 
@@ -93,4 +93,6 @@ gulp.task('watch', () => {
 /**
  * Default task, running just 'gulp' will run open the server and run the watch task
  */
-gulp.task('default', ['clean', 'html', 'sass', 'scripts', 'images', 'browser-sync', 'watch']);
+gulp.task('default', ['clean'], () => {
+    gulp.start('html', 'sass', 'scripts', 'images', 'browser-sync', 'watch');
+});
