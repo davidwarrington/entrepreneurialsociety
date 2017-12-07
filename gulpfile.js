@@ -2,12 +2,16 @@ const gulp         = require('gulp'),
       autoprefixer = require('gulp-autoprefixer'),
       browser_sync = require('browser-sync'),
       concat       = require('gulp-concat'),
+      del          = require('del'),
       sass         = require('gulp-sass');
 
 const config = {
     npm_dir: './node_modules'
 }
 
+gulp.task('clean', cb => {
+    return del(['./dist'], cb);
+});
 
 /**
  * Create Browser-Sync local server
@@ -89,4 +93,4 @@ gulp.task('watch', () => {
 /**
  * Default task, running just 'gulp' will run open the server and run the watch task
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['clean', 'html', 'sass', 'scripts', 'images', 'browser-sync', 'watch']);
