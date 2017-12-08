@@ -48,8 +48,9 @@ gulp.task('scripts', () => {
     return gulp.src([
                     config.npm_dir + '/jquery/dist/jquery.min.js',
                     config.npm_dir + '/popper.js/dist/umd/popper.min.js',
-                    config.npm_dir + '/boostrap/dist/js/bootstrap.min.js',
                     config.npm_dir + '/jquery.easing/jquery.easing.min.js',
+                    config.npm_dir + '/bootstrap/dist/js/bootstrap.min.js',
+                    config.npm_dir + '/bootstrap/dist/js/bootstrap.bundle.js',
                     './src/assets/js/vendor/*.js',
                     './src/assets/js/*.js'
                 ])
