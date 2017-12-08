@@ -7344,6 +7344,13 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
+.hero {
+  background-image: url("../img/hero.jpg");
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center;
+  height: 100vh; }
+
 header {
   padding: 154px 0 100px; }
 
