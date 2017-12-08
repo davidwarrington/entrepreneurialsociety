@@ -27,7 +27,3 @@
     });
   
   })(jQuery); // End of use strict
-
-  $(document).ready(function() {
-      alert(true);
-  });
