@@ -1,3 +1,16 @@
 h1 {
-    // font-size: 3em;
+    font-family: 'LiSong Pro', serif;
+    font-size: 5em;
+    font-weight: 400;
+}
+
+h2 {
+    &::after {
+        background: $primary;
+        content: '';
+        display: block;
+        height: 2px;
+        margin: 0 auto;
+        width: 280px;
+    }
 }

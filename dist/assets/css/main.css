@@ -7344,6 +7344,19 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
+h1 {
+  font-family: 'LiSong Pro', serif;
+  font-size: 5em;
+  font-weight: 400; }
+
+h2::after {
+  background: #cb2a1d;
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 0 auto;
+  width: 280px; }
+
 .hero {
   background-image: url("../img/hero.jpg");
   -webkit-background-size: cover;
