@@ -7364,6 +7364,19 @@ h2::after {
   background-position: center;
   height: 100vh; }
 
+#mainNav {
+  background-color: #cb2a1d; }
+
+.btn {
+  background-color: #cb2a1d;
+  border: none; }
+
+.navbar-brand img {
+  width: 38px; }
+
+.navbar-brand {
+  padding: 0; }
+
 header {
   padding: 154px 0 100px; }
 
