@@ -7557,3 +7557,9 @@ section {
     position: absolute;
     left: 0px;
     bottom: 0px; } }
+
+.modal:nth-of-type(even) {
+  z-index: 1042 !important; }
+
+.modal-backdrop.in:nth-of-type(even) {
+  z-index: 1041 !important; }
