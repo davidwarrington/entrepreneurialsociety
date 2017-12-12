@@ -1,5 +1,9 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica", $font-family-base;
+}
+
 h1 {
-    font-family: 'LiSong Pro', serif;
+    font-family: 'LiSong Pro', serif !important;
     font-size: 5em;
     font-weight: 400;
     padding-bottom: 0.3em;
