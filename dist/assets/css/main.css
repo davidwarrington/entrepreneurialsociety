@@ -7357,6 +7357,12 @@ h2::after {
   margin: 0 auto;
   width: 280px; }
 
+.social-bar > a:not(:last-of-type) {
+  margin-right: 1em; }
+
+.lllhd {
+  max-width: 12em; }
+
 .hero {
   background-image: url("../img/hero.jpg");
   -webkit-background-size: cover;
