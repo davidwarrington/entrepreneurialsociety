@@ -6363,3 +6363,7 @@ $(document).ready(function() {
     });
   
   })(jQuery); // End of use strict
+
+  $('#openBtn').click(function(){
+  $('#myModal').modal({show:true})
+});

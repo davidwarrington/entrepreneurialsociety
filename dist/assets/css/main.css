@@ -7407,7 +7407,7 @@ header {
     padding: 156px 0 100px; } }
 
 section {
-  padding: 150px 0; }
+  padding: 90px 0; }
 
 #WWD {
   text-align: center;
@@ -7426,11 +7426,33 @@ section {
   letter-spacing: -0.05em; }
 
 .sub-heading {
-  text-align: left; }
+  padding-top: 20px;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 1.3em;
+  letter-spacing: -0.05em; }
+
+.sub-heading::after {
+  background: #cb2a1d;
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 0 auto;
+  width: 220px; }
 
 .wrapper {
   padding: 30px;
-  padding-top: 20px; }
+  padding-top: 60px; }
+
+.info {
+  text-align: left;
+  padding: 5px 20px 20px 20px; }
+
+.snippet {
+  border-top: 1px solid #e5e5e5; }
+
+#bleft {
+  border-left: 1px solid #e5e5e5; }
 
 #time {
   color: #a3a1a1;
@@ -7557,3 +7579,9 @@ section {
     position: absolute;
     left: 0px;
     bottom: 0px; } }
+
+.modal:nth-of-type(even) {
+  z-index: 1042 !important; }
+
+.modal-backdrop.in:nth-of-type(even) {
+  z-index: 1041 !important; }
