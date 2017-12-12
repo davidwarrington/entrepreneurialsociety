@@ -7357,6 +7357,15 @@ h2::after {
   margin: 0 auto;
   width: 280px; }
 
+.form-inline > input {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.message {
+  height: 200px; }
+
 .social-bar > a:not(:last-of-type) {
   margin-right: 1em; }
 
