@@ -7364,6 +7364,10 @@ h2::after {
   margin: 0 auto;
   width: 280px; }
 
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200; }
+
 .form-inline > input {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -7589,3 +7593,7 @@ section {
 #map {
   width: 100%;
   height: 400px; }
+
+.CUinfo {
+  padding-top: 10px;
+  font-weight: 100 !important; }
