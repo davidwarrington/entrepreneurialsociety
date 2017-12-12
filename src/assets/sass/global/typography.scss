@@ -4,6 +4,11 @@ h1 {
     font-weight: 400;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+
+}
+
 h2 {
     &::after {
         background: $primary;
