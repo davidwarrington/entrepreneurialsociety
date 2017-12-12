@@ -6305,6 +6305,35 @@ return exports;
 }({},$));
 //# sourceMappingURL=bootstrap.bundle.js.map
 
+$(document).ready(function() {
+    $.ajaxSetup({ cache: true });
+    $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+      FB.init({
+        appId: '{141511146507788}',
+        version: 'v2.11' // or v2.1, v2.2, v2.3, ...
+      });
+      
+      FB.api(
+        '/UCLanEntrepreneurialSociety',
+        'GET',
+        {"fields":"events",
+         "access_token": "EAACAtCGejgwBAJfeLZCAYKZAaZCgTeQC2nMFxCAoSE1bKJcqpZAH7Iqp4fimDAOTsVJ712NIjZAZAX3DWnLMEaUATOlshYT4dq0oqM8oHERX1bWiPmDU8T2FmvrtgOUAlwpdaiqAd7rXeFgrQ5vdMrTbcWwFCd46nYB5wCupZBrUAZDZD"  
+        },
+        function(response) {
+            console.log(response.events.data[0]);
+
+            var data = response.events.data[7];
+
+            console.log(data)
+
+            // $('#div1').html(response.events.data[0]);
+        }
+      );
+    });
+})
+
+
+
 (function($) {
     "use strict"; // Start of use strict
   

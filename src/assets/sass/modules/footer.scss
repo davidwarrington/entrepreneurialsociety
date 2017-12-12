@@ -1,0 +1,11 @@
+.social-bar {
+    > a {
+        &:not(:last-of-type) {
+            margin-right: 1em;
+        }
+    }
+}
+
+.lllhd {
+    max-width: 12em;
+}
