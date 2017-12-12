@@ -2,6 +2,10 @@ h1 {
     font-family: 'LiSong Pro', serif;
     font-size: 5em;
     font-weight: 400;
+    padding-bottom: 0.3em;
+    @include media-breakpoint-down(sm) {
+      font-size: 2rem;
+    }
 }
 
 h2 {
