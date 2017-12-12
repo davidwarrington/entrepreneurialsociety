@@ -7585,3 +7585,7 @@ section {
 
 .modal-backdrop.in:nth-of-type(even) {
   z-index: 1041 !important; }
+
+#map {
+  width: 100%;
+  height: 400px; }
