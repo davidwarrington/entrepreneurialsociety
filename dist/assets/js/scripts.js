@@ -6335,6 +6335,8 @@ return exports;
   
   })(jQuery); // End of use strict
 
+  var event_data;
+
   $.ajaxSetup({ cache: true });
   $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
     FB.init({
@@ -6345,17 +6347,53 @@ return exports;
     FB.api(
       '/UCLanEntrepreneurialSociety',
       'GET',
-      {"fields":"events",
-       "access_token": "EAACAtCGejgwBAJfeLZCAYKZAaZCgTeQC2nMFxCAoSE1bKJcqpZAH7Iqp4fimDAOTsVJ712NIjZAZAX3DWnLMEaUATOlshYT4dq0oqM8oHERX1bWiPmDU8T2FmvrtgOUAlwpdaiqAd7rXeFgrQ5vdMrTbcWwFCd46nYB5wCupZBrUAZDZD"  
+      {
+        "fields":"events",
+        "access_token": "EAACAtCGejgwBAJfeLZCAYKZAaZCgTeQC2nMFxCAoSE1bKJcqpZAH7Iqp4fimDAOTsVJ712NIjZAZAX3DWnLMEaUATOlshYT4dq0oqM8oHERX1bWiPmDU8T2FmvrtgOUAlwpdaiqAd7rXeFgrQ5vdMrTbcWwFCd46nYB5wCupZBrUAZDZD"  
       },
       function(response) {
-          console.log(response.events.data[0]);
 
-          var data = response.events.data[7];
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
-          console.log(data)
+        for(var i = 0; i < 5; i++) {
+          var event = response.events.data[i];
 
-          // $('#div1').html(response.events.data[0]);
+          var selectors = {
+            // Time Selector
+            time: $('.event-list li:nth-of-type(' + (5 - i) + ') time'),
+            day: $('.event-list li:nth-of-type(' + (5 - i) + ') .day'),
+            month: $('.event-list li:nth-of-type(' + (5 - i) + ') .month'),
+            year: $('.event-list li:nth-of-type(' + (5 - i) + ') .year'),
+
+            // Info Selectors
+            title: $('.event-list li:nth-of-type(' + (5 - i) + ') .name-title'),
+            desc: $('.event-list li:nth-of-type(' + (5 - i) + ') .desc'),
+
+            // Button Selector
+            btn: $('.event-list li:nth-of-type(' + (5 - i) + ') .btn'),
+          };
+
+          var start_time = new Date(event.start_time);
+          event_date = {
+            full: start_time.toString(),
+            day: start_time.getDate(),
+            month: months[start_time.getMonth()],
+            year: start_time.getFullYear()
+          };
+
+          // Populate time element
+          selectors.time.attr('datetime', event_date.full);        
+          selectors.day.html(event_date.day);
+          selectors.month.html(event_date.month);
+          selectors.year.html(event_date.year);
+
+          // Populate Description
+          selectors.title.html(event.name);
+          selectors.desc.html(event.description);
+
+          // Add data to button
+          selectors.btn.attr('data-event-id', event.id);
+        }
       }
     );
   });
