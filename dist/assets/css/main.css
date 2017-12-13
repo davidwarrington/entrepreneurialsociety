@@ -7365,14 +7365,16 @@ h2::after {
   width: 280px; }
 
 p {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 200; }
+  font-family: 'Open Sans', sans-serif; }
 
 .form-inline > input {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1; }
+  @media (max-width: 767px) {
+    .form-inline > input {
+      margin-left: 0 !important; } }
 
 .message {
   height: 200px; }
@@ -7503,9 +7505,15 @@ section {
 
 .snippet {
   border-top: 1px solid #e5e5e5; }
+  @media (max-width: 767px) {
+    .snippet {
+      border: 0; } }
 
 #bleft {
   border-left: 1px solid #e5e5e5; }
+  @media (max-width: 767px) {
+    #bleft {
+      border: 0; } }
 
 #time {
   color: #a3a1a1;
@@ -7518,7 +7526,6 @@ section {
 .event-list {
   padding-top: 30px !important; }
 
-/* EVENT CSS */
 .modal:nth-of-type(even) {
   z-index: 1042 !important; }
 

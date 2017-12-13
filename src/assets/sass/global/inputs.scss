@@ -1,6 +1,11 @@
 .form-inline > input {
   flex-grow: 1;
+
+  @include media-breakpoint-down(sm) {
+    margin-left: 0 !important;
+  }
 }
+
 .message{
   height: 200px;
 }
