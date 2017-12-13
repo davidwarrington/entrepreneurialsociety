@@ -6335,7 +6335,7 @@ return exports;
   
   })(jQuery); // End of use strict
 
-  var event_data;
+  var event_data = [];
 
   $.ajaxSetup({ cache: true });
   $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
@@ -6357,6 +6357,9 @@ return exports;
 
         for(var i = 0; i < 5; i++) {
           var event = response.events.data[i];
+
+          // Push each event to the event_data array to allow it to be used later
+          event_data.push(event);
 
           var selectors = {
             // Time Selector
@@ -6414,3 +6417,23 @@ return exports;
     map: map
   });
 };
+
+
+// Populate modal on event more-info click
+$('.more').on('click', function() {
+  // Declare button clicked as variable (filter used later affects value of 'this')
+  // '$(this)' returns the element that caused the event
+  var current_button = $(this);
+  // Append a link to the event to test
+  $(this).parent().append('<a href="https://facebook.com/events/' + current_button.attr('data-event-id') + '">Event</a>');
+
+  console.log(current_button.attr('data-event-id'));
+
+  // Filter returns an array of JSON objects with the id given.
+  // Since the id is unique, [0] is used to return the first JSON object in the array
+  var current_event = event_data.filter(function(event) {
+    return event.id == current_button.attr('data-event-id');
+  })[0];
+
+  console.log(current_event);
+});
