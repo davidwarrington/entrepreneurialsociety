@@ -6348,7 +6348,7 @@ return exports;
       '/UCLanEntrepreneurialSociety',
       'GET',
       {
-        "fields":"events",
+        "fields": "events",
         "access_token": "EAACAtCGejgwBAJfeLZCAYKZAaZCgTeQC2nMFxCAoSE1bKJcqpZAH7Iqp4fimDAOTsVJ712NIjZAZAX3DWnLMEaUATOlshYT4dq0oqM8oHERX1bWiPmDU8T2FmvrtgOUAlwpdaiqAd7rXeFgrQ5vdMrTbcWwFCd46nYB5wCupZBrUAZDZD"  
       },
       function(response) {
