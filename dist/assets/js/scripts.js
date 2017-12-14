@@ -6362,26 +6362,41 @@ return exports;
           event_data.push(event);
 
           var selectors = {
-            // Time Selector
+            // Time Selectors
             time: $('.event-list li:nth-of-type(' + (5 - i) + ') time'),
             day: $('.event-list li:nth-of-type(' + (5 - i) + ') .day'),
             month: $('.event-list li:nth-of-type(' + (5 - i) + ') .month'),
             year: $('.event-list li:nth-of-type(' + (5 - i) + ') .year'),
 
+            start: $('.event-list li:nth-of-type(' + (5 - i) + ') .start-time span'),
+            end: $('.event-list li:nth-of-type(' + (5 - i) + ') .end-time span'),
+
             // Info Selectors
             title: $('.event-list li:nth-of-type(' + (5 - i) + ') .name-title'),
             desc: $('.event-list li:nth-of-type(' + (5 - i) + ') .desc'),
 
-            // Button Selector
+            // Button Selectors
             btn: $('.event-list li:nth-of-type(' + (5 - i) + ') .btn'),
+            link: $('.event-list li:nth-of-type(' + (5 - i) + ') .event-extra-info .btn')
           };
 
           var start_time = new Date(event.start_time);
+          var end_time = new Date(event.end_time);
           event_date = {
             full: start_time.toString(),
             day: start_time.getDate(),
             month: months[start_time.getMonth()],
-            year: start_time.getFullYear()
+            year: start_time.getFullYear(),
+
+            start: {
+              hour: ('0' + start_time.getHours()).slice(-2),
+              mins: ('0' + start_time.getMinutes()).slice(-2)
+            },
+            end: {
+              hour: ('0' + end_time.getHours()).slice(-2),
+              mins: ('0' + end_time.getMinutes()).slice(-2)
+            }
+
           };
 
           // Populate time element
@@ -6396,6 +6411,14 @@ return exports;
 
           // Add data to button
           selectors.btn.attr('data-event-id', event.id);
+
+          // Populate more-info location
+          // selectors.start.html(event_date.start.hour + ':' + event_date.start.mins);
+          // selectors.end.html(event_date.end.hour + ':' + event_date.end.mins);
+          // selectors.link.attr('href', 'https://facebook.com/events/' + event.id);
+
+          selectors.btn.attr('href', 'https://facebook.com/events/' + event.id);
+          selectors.btn.html('Take Part');          
         }
       }
     );
@@ -6406,17 +6429,17 @@ return exports;
 });
 
 
-  function initMap() {
-  var uluru = {lat: -25.363, lng: 131.044};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: uluru
-  });
-  var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-  });
-};
+//   function initMap() {
+//   var uluru = {lat: -25.363, lng: 131.044};
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     zoom: 4,
+//     center: uluru
+//   });
+//   var marker = new google.maps.Marker({
+//     position: uluru,
+//     map: map
+//   });
+// };
 
 
 // Populate modal on event more-info click
@@ -6424,16 +6447,14 @@ $('.more').on('click', function() {
   // Declare button clicked as variable (filter used later affects value of 'this')
   // '$(this)' returns the element that caused the event
   var current_button = $(this);
-  // Append a link to the event to test
-  $(this).parent().append('<a href="https://facebook.com/events/' + current_button.attr('data-event-id') + '">Event</a>');
-
-  console.log(current_button.attr('data-event-id'));
 
   // Filter returns an array of JSON objects with the id given.
   // Since the id is unique, [0] is used to return the first JSON object in the array
   var current_event = event_data.filter(function(event) {
     return event.id == current_button.attr('data-event-id');
   })[0];
+});
 
-  console.log(current_event);
+$('button.more-events').on('click', function () {
+  $(this).remove();
 });
