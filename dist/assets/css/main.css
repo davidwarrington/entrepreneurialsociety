@@ -7356,6 +7356,9 @@ h1 {
     h1 {
       font-size: 2rem; } }
 
+body {
+  font-family: 'Open Sans', sans-serif; }
+
 h2::after {
   background: #cb2a1d;
   content: '';
@@ -7490,6 +7493,9 @@ section {
 .wrapper {
   padding: 30px;
   padding-top: 60px; }
+
+.snippet {
+  border-top: 1px solid #e5e5e5; }
 
 .info {
   text-align: left;

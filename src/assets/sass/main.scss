@@ -63,16 +63,18 @@
         display: block;
         height: 2px;
         margin: 0 auto;
-        width: 220px;
-
-    
+        width: 220px;    
   }
 }
 
   .wrapper {
       padding: 30px;
       padding-top: 60px;
+  }
 
+  .snippet {
+    border-top: 1px solid #e5e5e5;
+    
   }
 
   .info {
@@ -123,8 +125,7 @@
         
       }
         
-.CUinfo{
+.CUinfo {
   padding-top: 10px;
   font-weight: 100 !important;
 }
-
