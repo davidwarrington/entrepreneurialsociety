@@ -54,23 +54,27 @@
           // Push each event to the event_data array to allow it to be used later
           event_data.push(event);
 
+          var current_event = function(selector) {
+            return $('.event-list li').eq(4 - i).find(selector);
+          };
+
           var selectors = {
             // Time Selectors
-            time: $('.event-list li:nth-of-type(' + (5 - i) + ') time'),
-            day: $('.event-list li:nth-of-type(' + (5 - i) + ') .day'),
-            month: $('.event-list li:nth-of-type(' + (5 - i) + ') .month'),
-            year: $('.event-list li:nth-of-type(' + (5 - i) + ') .year'),
+            time: current_event('time'),            
+            day: current_event('.day'),
+            month: current_event('.month'),
+            year: current_event('.year'),
 
-            start: $('.event-list li:nth-of-type(' + (5 - i) + ') .start-time span'),
-            end: $('.event-list li:nth-of-type(' + (5 - i) + ') .end-time span'),
+            start: current_event('.start-time span'),
+            end: current_event('.end-time span'),
 
             // Info Selectors
-            title: $('.event-list li:nth-of-type(' + (5 - i) + ') .name-title'),
-            desc: $('.event-list li:nth-of-type(' + (5 - i) + ') .desc'),
+            title: current_event('.name-title'),
+            desc: current_event('.desc'),
 
             // Button Selectors
-            btn: $('.event-list li:nth-of-type(' + (5 - i) + ') .btn'),
-            link: $('.event-list li:nth-of-type(' + (5 - i) + ') .event-extra-info .btn')
+            btn: current_event('.btn'),
+            link: current_event('.event-extra-info .btn')
           };
 
           var start_time = new Date(event.start_time);
@@ -117,9 +121,9 @@
     );
   });
 
-  $('#openBtn').click(function(){
-  $('#myModal').modal({show:true})
-});
+  // $('#openBtn').click(function(){
+  //   $('#myModal').modal({show:true})
+  // });
 
 
 //   function initMap() {
