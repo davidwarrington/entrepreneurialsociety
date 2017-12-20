@@ -46,6 +46,10 @@
       },
       function(response) {
 
+        var current_event = function(selector) {
+          return $('.event-list li').eq(4 - i).find(selector);
+        };
+
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
         for(var i = 0; i < 5; i++) {
@@ -53,10 +57,6 @@
 
           // Push each event to the event_data array to allow it to be used later
           event_data.push(event);
-
-          var current_event = function(selector) {
-            return $('.event-list li').eq(4 - i).find(selector);
-          };
 
           var selectors = {
             // Time Selectors
@@ -77,9 +77,9 @@
             link: current_event('.event-extra-info .btn')
           };
 
-          var start_time = new Date(event.start_time);
-          var end_time = new Date(event.end_time);
-          event_date = {
+          var start_time = new Date(parseDate(event.start_time));
+          var end_time = new Date(parseDate(event.end_time));
+          var event_date = {
             full: start_time.toString(),
             day: start_time.getDate(),
             month: months[start_time.getMonth()],
@@ -115,7 +115,7 @@
           // selectors.link.attr('href', 'https://facebook.com/events/' + event.id);
 
           selectors.btn.attr('href', 'https://facebook.com/events/' + event.id);
-          selectors.btn.html('Take Part');          
+          selectors.btn.html('Take Part');
         }
       }
     );
@@ -140,18 +140,43 @@
 
 
 // Populate modal on event more-info click
-$('.more').on('click', function() {
-  // Declare button clicked as variable (filter used later affects value of 'this')
-  // '$(this)' returns the element that caused the event
-  var current_button = $(this);
+// $('.more').on('click', function() {
+//   // Declare button clicked as variable (filter used later affects value of 'this')
+//   // '$(this)' returns the element that caused the event
+//   var current_button = $(this);
 
-  // Filter returns an array of JSON objects with the id given.
-  // Since the id is unique, [0] is used to return the first JSON object in the array
-  var current_event = event_data.filter(function(event) {
-    return event.id == current_button.attr('data-event-id');
-  })[0];
-});
+//   // Filter returns an array of JSON objects with the id given.
+//   // Since the id is unique, [0] is used to return the first JSON object in the array
+//   var current_event = event_data.filter(function(event) {
+//     return event.id == current_button.attr('data-event-id');
+//   })[0];
+// });
 
+/**
+ * Change button text when user clicks to represent next action
+ */
 $('button.more-events').on('click', function () {
-  $(this).remove();
+  var text = $(this).html();
+
+  if (text == 'See More Events') {
+    $(this).html('See Fewer Events');
+  } else {
+    $(this).html('See More Events');
+  }
 });
+
+
+/**
+ * parseDate
+ * Returns a valid date string for Safari compatibility.
+ * Replaces '-' in string with '/', replaces non-numeric characters with ' '
+ * @param {string} date 
+ */
+function parseDate(date) {
+  var parsed = Date.parse(date);
+  if (!isNaN(parsed)) {
+    return parsed;
+  }
+
+  return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
+}
