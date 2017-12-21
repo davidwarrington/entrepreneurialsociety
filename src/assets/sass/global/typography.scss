@@ -7,8 +7,12 @@ h1 {
     font-size: 5em;
     font-weight: 400;
     padding-bottom: 0.3em;
+    @include media-breakpoint-down(md) {
+        font-size: 4rem;
+    }
+
     @include media-breakpoint-down(sm) {
-      font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 

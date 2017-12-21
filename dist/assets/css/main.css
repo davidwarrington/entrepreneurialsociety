@@ -7352,9 +7352,12 @@ h1 {
   font-size: 5em;
   font-weight: 400;
   padding-bottom: 0.3em; }
+  @media (max-width: 991px) {
+    h1 {
+      font-size: 4rem; } }
   @media (max-width: 767px) {
     h1 {
-      font-size: 2rem; } }
+      font-size: 2.5rem; } }
 
 body {
   font-family: 'Open Sans', sans-serif; }
@@ -7435,6 +7438,11 @@ p {
           background-size: cover;
   background-position: center;
   height: 100vh; }
+  .hero .btn {
+    bottom: 0; }
+
+.uclan-logo {
+  width: 1.5em; }
 
 #mainNav {
   background-color: #cb2a1d; }
@@ -7453,13 +7461,6 @@ p {
   color: rgba(255, 255, 255, 0.8); }
   .navbar-dark .navbar-nav .nav-link:hover {
     color: white; }
-
-header {
-  padding: 154px 0 100px; }
-
-@media (min-width: 992px) {
-  header {
-    padding: 156px 0 100px; } }
 
 section {
   padding: 90px 0; }
