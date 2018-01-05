@@ -7449,6 +7449,44 @@ p {
 .navbar-brand {
   padding: 0; }
 
+/* contact form infomation */
+.come {
+  font-size: 30px;
+  padding: 30px 20px 40px 200px;
+  margin: -10px -150px;
+  text-align: left; }
+
+.contact {
+  font-size: 20px;
+  padding: 0px 10px 10px 30px;
+  margin: 0px -30px;
+  text-align: left; }
+
+.media {
+  font-size: 20px;
+  padding: -10px 10px -10px 40px;
+  margin: 0px 20px 20px 50px; }
+
+.Arthur {
+  font-size: 20px;
+  padding: 0px 10px 20px 80px;
+  margin: 0px -30px; }
+
+.formImg {
+  padding: 50px 20px 30px 150px;
+  margin: 0px -30px; }
+
+.house {
+  height: 40px;
+  padding: 10px 0px 0px 20px;
+  margin: 20px -10px -25px; }
+
+.phone {
+  height: 40px;
+  padding: 10px 0px 00px 20px;
+  margin: 20px -10px -25px; }
+
+/* Contact Form */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -7533,6 +7571,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease; }
+
+.btnSubmit {
+  position: absolute; }
 
 header {
   padding: 154px 0 100px; }
