@@ -296,9 +296,9 @@
 
               <div id="map"></div>
               <!-- Replace the value of the key parameter with your own API key. -->
-              <script async defer
+              <!-- <script async defer
               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQGto9imHonAlGQWV3PByYAAAB5lm96Nk&callback=initMap">
-              </script>
+              </script> -->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -310,86 +310,81 @@
   </section>
 
 
-  <section id="contact">
+  <section id="contact" class="pb-5">
     <div class="container">
-
-    <!-- contact form info-->
-
-<h2 class="title">Contact us</h2>
-<img src="assets/img/logo.png" class="formImg" alt="UCLan">
-      <p class="come">Come and see us!</p>
-      <p class="contact">Or get in touch using the form provided<br>
-        We'll get back to you as soon as possible.</p>
-
-
-<img src="assets/img/House.png" class="house" alt="House">
-        <p class="media"> UCLan, ME435 Media Factory</p>
-        <img src="assets/img/Phone.png" class="phone" alt="Phone">
-        <p class="Arthur"> Contact Arthur - 07267543123 </p>
-  </div>
-
-
-
-        <!-- contact form -->
-        <form method="POST" action="http://formspree.io/liamkarlmiddleton@hotmail.co.uk">
-
-        <div class="containerContact">
-          <div class="row">
-            <div class="col-lg-12">
-        <div class="group" id="styled">
-        <label for="name">Your Name</label>
-          <input type="text" name="name"required>
-          <span class="highlight"></span>
-          <span class="bar"></span>
-          </div>
-
-          <div class="group">
-          <label for="name">Your Email Address</label>
-          <input type="text" name="email"required>
-          <span class="highlight"></span>
-          <span class="bar"></span>
-          </div>
-
-
-        <div class="group">
-        <label for="name">Your Message</label>
-        <input type="textarea" name="message"required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-      </div>
-
-      <input type="submit" value="Submit" class="btn btn-primary mt-2 mx-auto d-block btnSubmit">
-      <input type="hidden" name="_next" value="https://davidwarrington.github.io/entrepreneurialsociety/"-->
-    </form>
-  </div>
-</div>
-</div>
-</div>
-
-  </section>
+      <h2 class="title">Contact us</h2>
+      <div class="row mt-5">
+        <div class="col-12 col-md-6 text-center">
+          <!-- contact form info -->
+          <img src="assets/img/uclan_logo.png" class="contact-logo" alt="UCLan">
+          <p class="text-center">Come and see us!</p>
+          <p>
+            <span class="d-block">Or get in touch using the form provided.</span>
+            <span class="d-block">We'll get back to you as soon as possible.</span>
+          </p>
+          <p class="text-center">Come and see us!</p>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <img src="assets/img/house.png" class="contact-info__list-img" alt="Address">
+              <p class="d-inline ml-1">UCLan, ME435 Media Factory</p>
+            </li>
+            <li class="mb-3">
+              <img src="assets/img/phone.png" class="contact-info__list-img" alt="Phone">
+              <p class="d-inline ml-1">Contact Arthur - 07267543123 </p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6">
+          <!-- contact form -->
+          <form method="POST" action="http://formspree.io/liamkarlmiddleton@hotmail.co.uk" class="contact-form d-flex flex-column">
+            <div class="form-group material-group mb-4">
+              <input type="text" name="name" class="input-material" required>
+              <label for="name" class="label-material">Your Name</label>
+              <!-- <span class="highlight"></span> -->
+              <span class="bar"></span>
+            </div>
+  
+            <div class="form-group material-group mb-4">
+              <input type="text" name="email" class="input-material" required>
+              <label for="name" class="label-material">Your Email Address</label>
+              <!-- <span class="highlight"></span> -->
+              <span class="bar"></span>
+            </div>
 
 
-
-
-
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="d-flex justify-content-center social-bar py-3 bg-primary">
-        <a href="https://www.facebook.com/UCLanEntrepreneurialSociety/">
-          <img src="assets/img/social/facebook.svg" alt="Facebook" width="36px" height="36px">
-          <span class="sr-only">Facebook</span>
-        </a>
-        <a href="https://twitter.com/uclanenter">
-          <img src="assets/img/social/twitter.svg" alt="Twitter" width="36px" height="36px">
-          <span class="sr-only">Twitter</span>
-        </a>
-      </div>
-      <div class="d-flex justify-content-center">
-        <div class="w-25 lllhd">
-            <img src="assets/img/lllhd_logo.png" alt="LLLHD logo" class="w-100">
+            <div class="form-group material-group mb-4 flex-stretch">
+              <textarea type="textarea" name="message" class="input-material textarea-stretch" required></textarea>
+              <label for="name" class="label-material">Your Message</label>
+              <!-- <span class="highlight"></span> -->
+              <span class="bar"></span>
+            </div>
+  
+            <input type="submit" value="Submit" class="btn btn-primary mt-2 w-100">
+            <input type="hidden" name="_next" value="https://davidwarrington.github.io/entrepreneurialsociety/"-->
+          </form>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="d-flex justify-content-center social-bar pb-3 bg-primary">
+      <a href="https://www.facebook.com/UCLanEntrepreneurialSociety/">
+        <img src="assets/img/social/facebook.svg" alt="Facebook" width="36px" height="36px">
+        <span class="sr-only">Facebook</span>
+      </a>
+      <a href="https://twitter.com/uclanenter">
+        <img src="assets/img/social/twitter.svg" alt="Twitter" width="36px" height="36px">
+        <span class="sr-only">Twitter</span>
+      </a>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="w-25 lllhd">
+          <img src="assets/img/lllhd_logo.png" alt="LLLHD logo" class="w-100">
+      </div>
+    </div>
+  </footer>
 
   <!-- JavaScript -->
   <script src="assets/js/scripts.js"></script>

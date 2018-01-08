@@ -1,4 +1,14 @@
 .social-bar {
+    padding-top: 12rem;
+
+    @include media-breakpoint-up(xs) {
+        padding-top: 6rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 8rem;
+    }
+
     > a {
         &:not(:last-of-type) {
             margin-right: 1em;

@@ -1,0 +1,98 @@
+/* Contact Details */
+.contact-logo {
+  width: 35%;
+}
+
+.contact-info__list-img {
+  height: 22px;
+}
+
+/* Contact Form */
+.contact-form {
+  background: white;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 0 40px rgba($black, 0.3);
+  height: 140%;
+  padding: 1.5em;
+}
+
+.material-group {
+  position: relative;
+}
+
+.input-material {
+  display: block;
+  border: none;
+  border-bottom: 1px solid $primary;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.label-material {
+  color: $gray-700;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: 0.2s ease all;
+
+  .input-material:focus ~ &,
+  .input-material:valid ~ & {
+    top: -20px;
+    color: $primary;
+  }
+}
+
+.bar {
+  display: block;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    left: 50%;
+  }
+
+  &:after {
+    right: 50%;
+  }
+
+  &:before,
+  &:after {
+    background: $primary;
+    bottom: 1px;
+    content: '';
+    height: 2px;
+    position: absolute;
+    transition: 0.2s ease all;
+    width: 0;
+  }
+
+  .input-material:focus ~ &:before,
+  .input-material:focus ~ &:after {
+    width:50%;
+  }
+}
+
+.highlight {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0%;
+  width: 33%;
+
+  .input-material:focus ~ & {
+    animation: inputHighlighter 0.3s ease;
+  }
+}
+
+@keyframes inputHighlighter {
+	from { background: rgba($primary, 0.2); }
+  to 	{ background: transparent; width: 0; }
+}
+
+.textarea-stretch {
+  height: 100%;
+}
