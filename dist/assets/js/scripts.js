@@ -6487,3 +6487,11 @@ function parseDate(date) {
 
   return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
 }
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}

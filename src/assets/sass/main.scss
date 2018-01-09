@@ -129,3 +129,59 @@
   padding-top: 10px;
   font-weight: 100 !important;
 }
+
+  
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #cb2a1d;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+
+}
+
+.sidenav a {
+  padding: 3px 3px 3px 23px;
+  text-decoration: none;
+  font-family: Helvetica;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #ffffff;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: -9px;
+  right: 20px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.openNav {
+  position: absolute;
+  top: 0;
+  right: 25px;
+}
+
+.sideNavstyle {
+  font-size:30px;
+  cursor:pointer;
+  position:absolute;
+  top:0;
+  right:20px;
+  color:white;
+}
