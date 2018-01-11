@@ -6487,3 +6487,7 @@ function parseDate(date) {
 
   return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
 }
+
+$('.nav-toggle').on('click', function(e) {
+  $('.sidenav').toggleClass('sidenav-active');
+});
