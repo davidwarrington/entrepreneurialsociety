@@ -1,6 +1,9 @@
+.navbar {
+	background: $primary;
+}
+
 .navbar-brand img {
 	width:38px;
-
 }
 
 .navbar-brand {
@@ -17,4 +20,45 @@
 			}
 		}
 	}
+}
+
+.sidenav {
+	background-color: $primary;
+	height: calc(100% - 46px);
+	overflow-x: hidden;
+	padding-top: 20px;
+	position: fixed;
+	right: 0;
+	top: 46px;
+	transition: all ease-in-out 0.5s;
+	width: 0;
+	z-index: 1;
+	
+	.nav-link {
+		color: $white;
+		display: block;
+		font-size: 20px;
+		padding-left: 23px;
+		text-decoration: none;
+		transition: 0.3s;
+
+		&:hover {
+			color: #ffffff;
+		}
+	}
+}
+  
+.nav-toggle {
+	background: none;
+	border: 0;
+
+	.sidenav & {
+		position: absolute;
+		top: 8px;
+		right: 15px;
+	}
+}
+
+.sidenav-active {
+	width: 200px;
 }

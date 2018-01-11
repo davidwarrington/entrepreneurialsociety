@@ -1,12 +1,41 @@
-#mainNav {
-
-	background-color: $primary;
+.wrapper {
+	padding: 30px;
+	padding-top: 60px;
 }
 
-.btn {
-	background-color: $primary;
-	border: none;
+.about-topic {
+
+	&:nth-child(n + 4) { // Select all but the first three
+		border-top: 1px solid #e5e5e5;
+
+		@include media-breakpoint-down(sm) {
+			border: 0;
+		}
+	}
+
+	&:nth-child(3n - 1), // Select all that are equal to 3n (3, 6, 9...),
+	&:nth-child(3n) {	 // or 3n-1 (2, 5, 8...)
+		border-left: 1px solid #e5e5e5;
 	
+		@include media-breakpoint-down(sm) {
+		  border: 0;
+		}
+	  }
 }
 
+.sub-heading {
+	font-size: 1.3em;
+	letter-spacing: -0.05em;
+    padding-top: 20px;
 
+	&:after{
+		@extend h2::after;
+		max-width: 100%;
+		width: 220px;
+	}
+}
+
+.info {
+	padding: 5px 20px 20px 20px;
+	text-align: left;
+}

@@ -11,10 +11,14 @@
 }
 
 .uclan-logo {
-    width: 3.5em;
-    margin: 15px 20px -30px 20px
-
+    margin: 15px 20px -30px;
+    width: 3.5em;    
 }
+
 h1 {
-  font-size: 50px
+    font-size: 50px;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 45px;
+    }
 }

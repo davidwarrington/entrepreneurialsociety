@@ -6,6 +6,10 @@
     li {
         margin-bottom: 2em;
 
+        .name-title {
+            font-size: 1.3em;
+            letter-spacing: -0.05em;
+        }
 
         .desc {
             margin: 0;
@@ -40,12 +44,17 @@
     }
 
     .event-desc {
-        padding: 1em;
         border-left: 2px solid $primary;
+        padding: 1em;
+        text-align: center;
         
         @include media-breakpoint-down(sm) {
             border-left: none;
             padding: 1em;
+        }
+
+        .desc {
+            font-size: 0.75em;
         }
     }
 
