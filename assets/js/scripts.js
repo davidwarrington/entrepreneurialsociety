@@ -6329,7 +6329,7 @@ return exports;
   
     // Activate scrollspy to add active class to navbar items on scroll
     $('body').scrollspy({
-      target: '#mainNav',
+      target: '.navbar',
       offset: 54
     });
   
@@ -6349,7 +6349,7 @@ return exports;
       'GET',
       {
         "fields": "events",
-        "access_token": "EAACAtCGejgwBAJfeLZCAYKZAaZCgTeQC2nMFxCAoSE1bKJcqpZAH7Iqp4fimDAOTsVJ712NIjZAZAX3DWnLMEaUATOlshYT4dq0oqM8oHERX1bWiPmDU8T2FmvrtgOUAlwpdaiqAd7rXeFgrQ5vdMrTbcWwFCd46nYB5wCupZBrUAZDZD"  
+        "access_token": "EAAFk58PB4DcBAHcATXLKnlKqqbmv6Vk0tiNIPGA6Fgwos42dqMFlZACF49SiNo3bAKw8scUs17xflBwZASrRZAydoWPzhaoK34t5cKdCrN87EIyPw171LRx0cHhFVji1arBTEd5EznM1cz327mQSxsrMoCe7SZCbHmF3RW71nZCIk3wVBI60E"
       },
       function(response) {
 
